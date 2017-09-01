@@ -1,0 +1,509 @@
+\documentclass[11pt]{article}
+
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{adjustbox}
+\usepackage{natbib}
+
+\title{The Effect of the Medicaid Expansion \\ on Opioid Addiction}
+\author{Stephanie Schauder}
+\date{August 2017}
+
+\setlength{\parskip}{11pt}
+
+\begin{document}
+
+\maketitle
+
+
+
+\section{Abstract}
+
+In this paper, I examine the effect of the Medicaid expansion on opioid addiction.  I hypothesize that expanding Medicaid coverage could potentially improve indicators of opioid addiction if people are able to enter addiction treatment.  Alternatively, expanding insurance could worsen the epidemic if it permits more people to seek medical assistance for their pain and opioids are covered by insurance.  As indicators of opioid addiction, I look at the effect of Medicaid on deaths due to opioid overdose, opioid addiction treatment admissions, and opioids sold.
+
+\section{Introduction} 
+
+
+This paper operates at the intersection of the literature on the opioid epidemic and the literature on the Medicaid expansion.  Both are relatively new and have progressed substantially in recent years.  
+
+Opioid addiction in the United States is a serious problem that has been growing since the late 1990's.  The rate of overdose deaths related to opioids has increased by 200$\%$ since the year 2000, and opioid overdoses are now the primary reason for the rapid increase in deaths due to drug poisoning in the past 20 years.  In 2014 there were more deaths from overdoses of any kind than from car accidents \citep{Rudd2016}.   
+
+For the majority of the 20th century, the medical paradigm was that opioids should be prescribed minimally for pain, and should only be given more liberally in the case of terminal illness \citep{Meldrum2016}.  However, this way of thinking began to change in the 1980's as the medical community recognized that chronic pain was severely undertreated.  Doctors were encouraged to take patients' complaints more seriously, and a 1995 campaign to recognize pain as ``the fifth vital sign" encouraged physicians to treat pain more aggressively \citep{Kolodny2015}.  Coinciding with this renewed interest in addressing pain was the release and heavy marketing of OxyContin (extended release oxycodone) a synthetic opioid thought to have fewer side effects than the medications previously prescribed. Additionally, an informal but widely cited 1986 study claimed that long term use of opioids for pain management was safe and effective \citep{Kolodny2015, Portenoy1986}.  As a result of these factors, the number of opioids prescribed for pain has increased fourfold since 1999 \citep{CentersforDiseaseControlandPrevention}.  
+
+The medical community now recognizes that contrary to prior belief, opioids are highly addictive. In fact, opioid addiction has been classified as an epidemic and has become one of the greatest medical challenges of the past decade.  In addition to the health and quality of life effects of opioid addiction, recent research has shown that the opioid epidemic has also taken a toll on the economy.  Someone who abuses opioids costs the healthcare systems an average of \$10,627 more than a non-abuser, and incurs an additional excess \$1,244 in work-loss costs on average \citep{Rice2014}.
+
+A paper by the RAND corporation exploited differential eligibility for Medicare Part D, and found that higher levels of insurance were associated with more opioid prescriptions and with higher levels of opioid addiction \citep{Powell2016}.  I also seek to investigate the impact of higher levels of insurance on opioid addiction, but I will look at the Medicaid expansion which affects a different demographic than Medicare Part D.\footnote{Medicaid covers people in poverty, while Medicare covers the elderly.  Specifically, Medicare Part D covers prescription medications.}
+
+
+I will use the Affordable Care Act (ACA) Medicaid expansion to examine the effect of an increase in insurance coverage on opioid addiction.  The ACA was implemented in 2010. Originally, the ACA included a provision to expand Medicaid to all people under 138\% of the federal poverty line in all states.  However, a Supreme Court decision in 2012 ruled that states could decide if they wanted to adopt the Medicaid expansion.  As of January 1, 2017, 32 states including Washington D.C. have adopted the expansion, and 19 states have not \citep{TheHenryJ.KaiserFamilyFoundation2017}.\footnote{Washington D.C. will be subsequently be considered a state}  
+
+Several studies have found that the ACA Medicaid expansion increased the number of people receiving health insurance.  Sommers et al. look at self-reported insurance coverage and find that significantly more adults were able to obtain coverage as a result of the Medicaid expansion \citep{Sommers2015}.  Courtemanche et al. find that the number of people insured increased in both expansion states and non-expansion states but that it was significantly higher in expansion states.  Additionally, the authors find no evidence that the Medicaid expansion was crowding out private insurance \citep{Courtemanche2017}.  Frean et al. find that the increase in insurance coverage in expansion states is not only due to people who were previously ineligible becoming eligible, but also due to previously eligible people obtaining insurance \citep{Frean2016} .  Additional studies find that more people were able to obtain insurance as a result of the ACA expansion \citep{Sommers2014, Wherry2016}.  This suggests that the Medicaid expansion did in fact increase insurance coverage in the states that chose to expand.  
+
+In a working paper, Maclean and Saloner look at the effect of the Medicaid expansion on insurance coverage and drug addiction.  The authors find that the number of people paying for treatment with Medicaid increased by 57\%. They used Medicaid State Drug Utilization Data and found that the number of Medicaid-reimbursed prescriptions written for medicines that treat drug addiction increased by 33\%.  They found no effect on addiction treatment admissions \citep{Maclean2017}. My research is similar to this paper in that I also look at medications sold and treatment admissions. However, I use three different data sources and I concentrate specifically on opioid addiction.   
+
+Other studies have shown that an increase in Medicaid enrollment has led to an increase in the utilization of medical services.  The Oregon experiment found that when Medicaid was expanded by lottery, there was an increase in the use of services for those newly covered by Medicaid \citep{Baicker2013}.  Also, Simon et al. look at the effect of the ACA Medicaid expansion on the utilization of preventative care services.  They find that the expansion not only increased insurance coverage, but also led to an increased proportion of people with a personal doctor, receiving HIV tests, and visiting the dentist.  Additionally, they observed improvements in self-reported health \citep{Simon2017}.  This is relevant because insurance coverage may decrease opioid addiction by increasing preventative care as outlined above.     
+
+In this paper, I will explore how increasing the number of people with health insurance impacted the opioid epidemic. I hypothesize that health insurance could affect indicators of opioid addiction in both positive and negative ways.  Medicaid covers both addiction treatment and opioid medications, effectively lowering the cost of both of these treatment options. Health insurance might decrease opioid addiction because if the cost of addiction treatment is lower, people will consume more addiction treatment which could reduce the number of overdose deaths and general opioid use.  However, it is worthwhile to note that if consumers factor the cost of addiction treatment into their decision about whether to start using opioids, a reduction in the cost of addiction treatment will lower the marginal cost of opioid addiction and may increase opioid abuse. Alternatively, health insurance may increase opioid addiction because the cost of visiting a doctor and purchasing opioid medication has decreased.  
+
+
+I will use a difference in differences (DD) and a difference in difference in differences (DDD) approach with data at the state level to look at the effect of the Medicaid expansion on indicators of opioid addiction.  I control for several state covariates including legislation on Prescription Drug Monitoring Programs (PDMPs) and the legality of marijuana. There is mixed evidence that the presence of a PDMP prevents drug abuse \citep{Patrick2016, Brady2014}.  However specific aspects of PDMP laws may be more useful than others. Buchmueller and Carey (2017) find that PDMPs which include a provision that the provider must access the PDMP before prescribing opioids are effective at reducing indicators of opioid abuse.  However, PDMPs without such a provision have no effect \citep{Buchmueller2017}. There is some evidence that medical marijuana can be a substitute for opioid medication \citep{Piper2017}.  Powell et al. (2015) use the Treatment Episode Data Set and the National Vital Statistics System to find that when states allow marijuana dispensaries there is a decrease in opioid related overdose deaths and opioid addiction.  They find no evidence for the efficacy of medical marijuana laws in the absence of dispensaries \citep{Powell2015}.
+
+This paper contributes to the literature on the effect of the Medicaid expansion by looking specifically at opioid addiction.  Section 2 outlines the data that I will use.  Section 3 is a discussion of the methods and the assumptions necessary to employ them.  Section 4 presents the results, and section 5 concludes. 
+
+\section{Data}
+To assess the impact of the Medicaid expansion on opioid addiction, I use a panel dataset in which each observation corresponds to a particular state and year.  I use three distinct datasets to look at opioids sold, overdose deaths, and treatment admissions. 
+
+The data on opioids sold (both opioid analgesics and medications to treat opioid addiction) come from the Automated Reports and Consolidated Ordering System (ARCOS).  The quantity of each medication sold in a given state and year is reported in grams. This is useful for comparing the sales of a particular drug across states and years. However, with the exception of a few drugs that I will discuss below, I am more interested in the trend in overall opioids sold than in individual drug sales, which could fluctuate due to substitution between opioid analgesics.  To make the opioid drugs comparable, I converted each drug to the oral morphine equivalent dosage (MED) \citep{Gordon1999}. I create a variable which is an aggregation of MED of 7 of the most common opioid analgesics (morphine, hydromorphone, oxymorphone, oxycodone, codeine, hydrocodone, meperidine).  I call this variable Total Opioids Sold.  
+ 
+I did not include methadone or buprenorphine in Total Opioids Sold because these medications can be used to treat opioid addiction and therefore are not substitutes for opioid analgesics themselves.  Ideally, I would have liked to aggregate the MEDs of these two variables to create one variable for drugs used to treat addiction; however, the relationship between buprenorphine and methadone is not linear so there are no standard multipliers that would allow me to do this \citep{Wallera}.  Therefore, I look at morphine and buprenorphine sold as separate outcomes.  Fentanyl is not included in Total Opioids Sold because while fentanyl has an MED to intravenous morphine, it cannot be converted to oral morphine.\footnote{Other opioid analgesics have an oral morphine equivalent and not an intrevenous morphine equivalent}  Therefore, I also examined fentanyl separately.  All of these variables are measured in grams per 100,000 people.
+
+One limitation of the ARCOS data is that the dataset for the year 2012 is missing several of the important opioid drugs. I have excluded this year when I created the aggregate variable, Total Opioids Sold.  The data cover the years 2008-2015.
+
+
+The data on overdose deaths comes from the Centers for Disease Control and Prevention (CDC) multiple cause of death files \citep{CentersforDiseaseControlandPrevention2017}.  I am interested in drug overdose deaths, and within that category, all deaths due to opioids.  One limitation of this data is that for a particular state and year, if the number of deaths that fall into a specific International Classification of Diseases (ICD) category sum to less than 10, the number of deaths is not reported.  To construct my variable for total deaths due to opioids, I sum 9 different ICD categories.\footnote{The specific ICD codes I use are: F11.1, F11.2 F11.9, F19.1, F19.2, F19.9, X42, X62, Y12}  If the number of deaths was not reported for a given state-year in any of these categories, I counted it as zero.  Therefore this data should be considered an underestimate of the true number of opioid overdose deaths.  The units of this variable are deaths per 100,000 people. This data ranges from 2003-2015.  
+
+Data on opioid addiction treatment admissions comes from the Treatment Episode Data Set (TEDS). The TEDS data is collected by the Center for Behavioral Health Statistics and Quality, Substance Abuse and Mental Health Services Administration (SAMHSA).  TEDS collects data from the states on addiction treatment services.  I used three variables from the TEDS treatment admissions dataset, opioid addiction treatment, opioid dependence flag, and opioid abuse flag.  Opioid addiction treatment admissions comprises people who entered addiction treatment with opioids stated as the primary addictive substance.  People who are addicted to multiple substances but did not state opioids as the primary addiction are excluded. This variable covers the years 2003-2015.  Opioid dependence flag and opioid abuse flag, are people who entered addiction treatment and were flagged as either dependent on opioids or abusing opioids.  This may or may not overlap with the primary abused substance being opioids.  The opioid dependence and abuse variables only cover 2003-2014 \citep{SubstanceAbuseandMentalHealthServicesAdministration1015}.  These three variables are reported in units of treatment admissions per 100,000 people.
+
+
+Figures \ref{Total Opioids Sold} to \ref{Abuse} 
+show the trend in the outcome variables over time.  The red line marks the year 2013, which was the last year before the expansion.  At first glance, the expansion does not appear to have a particularly strong effect on any of the outcome variables. In expansion states, fentanyl (figure \ref{Fenanyl}) has a jump in 2011 and 2013 that I have no explanation for. Deaths due to opioids (figure \ref{Deaths}) and opioid abuse flag (figure \ref{Abuse}) appear to increase more after the expansion in states that expanded Medicaid than in states that did not.  
+
+\clearpage
+
+\begin{figure}
+\begin{center}
+  \includegraphics[height=3in]{medsum1.png}
+  \caption{Total Opioids Sold (grams of morphine per 100,000 people)}
+  \label{Total Opioids Sold}
+  \end{center}
+\end{figure}
+
+\begin{figure} 
+\begin{center}
+  \includegraphics[height=3in]{bupe.png}
+  \caption{Buprenorphine Sold in the Average State (grams per 100,000 people)}
+  \label{Buprenorphine}
+   \end{center}
+\end{figure}
+
+\begin{figure} 
+\begin{center}
+  \includegraphics[height=3in]{methadone.png}
+  \caption{Methadone Sold in the Average State (grams per 100,000 people)}
+  \label{Methadone}
+   \end{center}
+\end{figure}
+
+\begin{figure} 
+\begin{center}
+  \includegraphics[height=3in]{fentanyl.png}
+  \caption{Fentanyl Sold in the Average State (grams per 100,000 people)}
+  \label{Fenanyl}
+   \end{center}
+\end{figure}
+
+\begin{figure} 
+\begin{center}
+  \includegraphics[height=2.85in]{opioidsum.png}
+  \caption{Deaths Due to Opioids in the Average State(deaths per 100,000 people)}
+  \label{Deaths}
+   \end{center}
+\end{figure}
+
+\begin{figure}
+\begin{center} 
+  \includegraphics[height=2.85in]{primarytreatopioid.png}
+  \label{primary}
+  \caption{Opioid Treatment Admissions in the Average State (admissions per 100,000 people)}
+   \end{center}
+\end{figure}
+
+\begin{figure} 
+\begin{center}
+  \includegraphics[height=2.85in]{opioiddependence.png}
+  \caption{Number of People Flagged as Opioid Dependent in the Average State (admissions per 100,000 people)}
+   \label{dependence}
+    \end{center}
+\end{figure}
+
+
+\begin{figure} 
+\begin{center}
+  \includegraphics[height=2.85in]{opioidabuse.png}
+  \caption{Number of People Flagged with Opioid Abuse in the Average State (admissions per 100,000 people)}
+  \label{Abuse}
+  \end{center}
+\end{figure}
+
+\cleardoublepage
+
+
+Data on the status of the Medicaid expansion comes from the Kaiser Family Foundation \citep{TheHenryJ.KaiserFamilyFoundation2017}.  Currently, 32 states and the District of Columbia have participated in the Medicaid expansion.  Of those 32, 26 officially expanded on January 1, 2014 and 6 states expanded at some point after that. Eleven states partially expanded Medicaid before 2014, but these expansions occurred to differing extents.  In 2014 all states which choose to participate (including the early partial expanders), expanded to cover adults under 138\% of the poverty line.  In this analysis, I documented early expanders as expanding in 2014.  As a robustness check, I report additional regressions where I exclude those states.  
+
+Table \ref{State Legislation} shows the states that adopted the Medicaid expansion.  The first column shows the the actual date the legislation was adopted.  The second column shows the date rounded to the nearest year as I consider it in my data. If the state adopted legislation in January through July the legislation is counted as effective in the current year.  If the legislation was adopted in August through December, the legislation was counted as effective beginning in the subsequent year. Blanks indicate that the state did not adopt the expansion. The expansion occurred across geographic and political lines; however, there is a definite pattern of states in the Southeast generally not adopting and states in the Northeast generally adopting.   
+
+\cleardoublepage
+
+\begin{table}
+\centering
+\scriptsize
+\caption{State Legislation} 
+\label{State Legislation}
+\begin{tabular}{ccc}
+\hline \hline
+ State & Date of Medicaid Expansion & Year in Data\\
+ Alabama & &\\
+ Alaska & 9/1/15 & 2016\\
+ Arizona &1/1/14 & 2014\\
+ Arkansas &1/1/14 & 2014\\
+ California & 1/1/14 & 2014\\
+ Colorado &1/1/14 & 2014\\
+ Connecticut &1/1/14 & 2014\\
+ D.C. &1/1/14 & 2014\\
+ Delaware &1/1/14 & 2014\\
+ Florida & &\\
+ Georgia &&\\
+ Hawaii &1/1/14 & 2014\\
+ Idaho &&\\
+ Illinois & 1/1/14 & 2014\\
+ Indiana & 2/1/15 & 2015\\
+ Iowa & 1/1/14 & 2014\\
+ Kansas &&\\
+ Kentucky & 1/1/14 & 2014\\
+ Louisiana & 7/1/16 & 2017\\
+ Maine &&\\
+ Maryland & 1/1/14 & 2014\\
+ Massachusetts & 1/1/14 & 2014\\
+ Michigan & 4/1/14 &2014\\
+ Minnesota & 1/1/14 & 2014\\
+ Mississippi &&\\
+ Missouri &&\\
+ Montana & 1/1/16 & 2016\\
+ Nebraska &&\\
+ Nevada & 1/1/14 & 2014\\
+ New Hampshire & 8/15/14 & 2015\\
+ New Jersey & 1/1/14 & 2014\\
+ New Mexico & 1/1/14 & 2014\\
+ New York & 1/1/14 & 2014\\
+ North Carolina &&\\
+ North Dakota & 1/1/14 & 2014\\
+ Ohio & 1/1/14 & 2014\\
+ Oklahoma &&\\
+ Oregon & 1/1/14 & 2014\\
+ Pennsylvania & 1/1/15 & 2015\\
+ Rhode Island & 1/1/14 & 2014\\
+ South Carolina &&\\
+ South Dakota &&\\
+ Tennessee &&\\
+ Texas &&\\
+ Utah &&\\
+ Vermont &1/1/14 & 2014\\
+ Virginia &&\\
+ Washington & 1/1/14 & 2014\\
+ West Virginia & 1/1/14 & 2014\\
+ Wisconsin &&\\
+ Wyoming &&\\ 
+\hline
+\end{tabular}
+\end{table}
+
+\cleardoublepage
+
+Data on Prescription Drug Monitoring Programs comes from the Prescription Drug Abuse Policy System (PDAPS). Data on marijuana laws come from the National Organization for the Reform of Marijuana Laws \citep{NORML}.  Data on state insurance rates, race, and state median income come from the Current Population Survey \citep{U.S.CensusBureau2016}.  Four state control variables were created from this data.  A variable for the number of people uninsured divided by the total sampled, captures the percentage of people in the state without insurance.  Another variable records the percentage of the sample on Medicaid for each state.  A third variable is the percentage of the sample which is white.  Race is unlikely to change significantly overtime, but there is evidence that there is a large racial gap in opioid prescribing and addiction, so I have included it as a control \citep{Johnson2016}.  The fourth variable is the state median income.  
+
+Data on state population for the years 2005-2015 come from the American Community Survey (a survey conducted by the Census Bureau) \citep{U.S.CensusBureau2017}.  Data for the years 2003-2004 come from an archived Census report \citep{U.S.CensusBureau2006}.  
+
+
+
+\begin{table}[htb]
+\caption{Summary Statistics} 
+\label{summary statistics}
+\begin{adjustbox}{width=\textwidth,keepaspectratio}
+\begin{tabular}{c|ccc|ccc|l}
+ \multicolumn{7}{c|}{} & \textbf{Difference} \\
+& \multicolumn{3}{|c|}{\textbf{Never Expanded}} & \multicolumn{3}{|c|}{\textbf{Ever Expanded}} & \textbf{in Means} \\ 
+\hline \hline
+ & N & Mean & Std. Dev. & N & Mean & Std. Dev. & P-value\\ \hline
+Total Opioid Sales &154 & 54800.5 & 18395.25 & 203 & 52843.86 & 17345.75 & .3045\\
+Buprenorphine &176 & 597.96 & 442.16 & 232 & 786.58 & 636.49 & .0008***\\
+Methadone &176 & 4120.64 & 2503.59 & 232 & 5888.64 & 2818.91 & .0000***\\
+Fenanyl  &176 & 186.01 & 181.39 & 232 & 155.51 & 37.70 & .0131**\\
+Overdose Deaths  &286 & .4227 & .2066 & 377 & .6022 & .3374 & .0000***\\
+Admissions  &275 & 44.62 & 57.61 & 365 & 56.84 & 59.36 & .0092***\\
+Dependence  &255 & 26.93 & 28.35 & 338 & 72.38 & 124.99 & .0000***\\
+Abuse  &255 & 1.645 & 1.951 & 338 & 2.555 & 3.793 & .0005***\\
+Marijuana Legal  &286 & .0034 & .0591 & 377 & .0159 & .1253 & .1216\\
+Medical Marijuana  &286 & .1328 & .3400 & 377 & .4137 & .4931 & .0000***\\
+State Dispensaries &286 & .0454 & .2086 & 377 & .2811 & .4501 & .0000***\\
+PDMP Law  &286 & .6293 & .4838 & 377 & .6896 & .4632 & .1040\\ 
+Must Access  &286 & .0104 & .1020 & 377 & .0477 & .2135 & .0066***\\
+Income  &286 & 47133 & 7432 & 377 & 52348 & 8656 & .0000***\\
+Percent White  &286 & .8041 & .1099 & 377 & .8018 & .1558 & .8284\\
+\hline
+\multicolumn{8}{c}{\footnotesize{Standard errors are in parenthesis.  *, **, and *** indicate significance at the 10\%, 5\% and 1\% levels respectively}} \\
+
+
+\hline
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\cleardoublepage
+
+Table \ref{summary statistics} presents summary statistics for the control variables and the outcome variables.  Some notable differences are that states that expand Medicaid at some point are more likely to have legal medical marijuana, state marijuana dispensaries, and PDMP must access laws. An interesting finding is that states that expanded Medicaid also tended to be significantly wealthier.       
+
+\section{Methods}
+With this data, I plan to use a difference in difference (DD) and a difference in difference in difference (DDD) estimation technique. The general DD equation is as follows:
+
+\begin{equation}
+    Y_{st}=\beta_0+\beta_1Treat_s+ \beta_2 Treat_s*Post_t+\beta_3 X_{st} + \epsilon_{st}
+     \label{DDexample}
+\end{equation}
+
+
+Where each observation is a state-year (denoted by $_s$ and $_t$ respectively).  $Treat_s$ is a binary variable for if the state is in the treatment or control group and $Post_t$ is a binary variable which reflects if the time period is before or after the expansion.  $\beta_2$ is the DD estimator.  
+
+In my data, twenty-six states expanded Medicaid in 2014, three expanded Medicaid in 2015, two in 2016, and one in 2017. Because of constraints on the outcome variables, my data only goes to 2015.  The three states that expanded in 2016 and 2017 were placed in the control (non-expansion) group.  However, because the expansion happened in different places at different times, I cannot define a post variable in the traditional way.  To deal with this, I define a variable called $Expand_{st}$ which I use in place of, $Treat_s*Post_t$.  $Expand_{st}$ equals zero for all states before 2014.  In 2014, states that expand in that year are given a one, and other states are given a zero.  In 2015, states that expand in either 2014 or 2015 are given a one.        
+
+
+I modify the traditional DD specification in equation \ref{DDexample} to have state and time fixed effects, $\beta_s$ and $\beta_t$ respectively. Where $\beta_t$ is a set of dummy variables.  Including state fixed effects controls for the time invariant features of a state, such as the culture or political environment which may impact the decision to expand Medicaid.  However, state fixed effects are perfectly collinear with the treat variable in equation \ref{DDexample}.  Therefore, I omit $Treat_s$ and estimate equation \ref{DD}.
+
+\begin{equation}
+    Y_{st}=\beta_0+\beta_1 Expand_{st}+\beta_2 X_{st} + \beta_s + \beta_t + \epsilon_{st}
+     \label{DD}
+\end{equation}
+
+
+Where $Y_{st}$ is the outcome variable (treatment admissions, deaths, or the number of grams sold of a particular drug) in a particular state in a particular year.  $X_{st}$  is a set of control variables for each state in each year. $X_{st}$  includes population, median income, Medicaid rate, percent white, the legality of recreational marijuana, the legality of medical marijuana, state marijuana dispensaries, the presence of a PDMP, and the presence of a PDMP must access law.  $\beta_s$ and $\beta_t$ are state and time fixed effects as mentioned above.  I cluster standard errors by state.
+
+
+My identifying assumption for the DD specifications is parallel trends. This assumption posits that in the absence of a treatment, the trends in the outcome variables should not differ between the treatment and control groups.  I test this assumption with an event study using equation \ref{ES_equation}.      
+
+\begin{equation}
+    Y_{st}=\sum_{i=-y}^1 \alpha_i Y(i)_{st}+\beta_{1} X_{st} + \beta_s + \beta_t + \epsilon_{st}
+     \label{ES_equation}
+\end{equation}
+
+$X_{st}$ is the set of covariates.  $\beta_s$ and $\beta_t$ are state and time dummy variables as above. $Y(i)_{st}$ is a set of $y$ relative dummy variables, where $y$ is the number of years of data pre-expansion (either 7 or 12 depending on the outcome). $Y(i)_{st}$ equals zero for all control states in all years. $Y(i)_{st}$ equals one for a particular state-year if it is $i$ years before that state expanded Medicaid.      
+
+To test for parallel trends, I estimate equation \ref{ES_equation}.  Then I perform an F-test for the joint significance of the pre-expansion  relative time dummy variables (i.e. the joint significance of the  $\alpha_i$ coefficients).  If the coefficients on these variables are jointly significantly different from zero, this suggests that the states that did expand Medicaid have different trends in the outcome variables in the years preceding the expansion.  While this is not a direct test of the parallel trends assumption\footnote{Which we cannot test because there is no counterfactual}, it suggests that in the absence of the Medicaid expansion, the trends in the outcome variables would not be parallel. 
+
+
+
+The parallel trends assumption implies that the decision to expand Medicaid is not correlated with the changes in the outcome variables.  However, it is likely that states that expanded Medicaid are different in some ways from states that did not expand, and if these ways are correlated with opioid addiction indicators this could be problematic.  Therefore, I decided to also estimate a DDD model using difference in pre-treatment uninsurance rates.\footnote{The number of people uninsured in a particular state in 2013 divided by 100}   
+
+
+The uninsurance rate in 2013 varied from 3.5\% in  Massachusetts to 20\% in Texas.  Part of this variation can be attributed to states partially expanding Medicaid several years before the official 2014 expansion.\footnote{Eleven states partitially expanded Medicaid before the 2014 expansion.  These states are AZ, CA, CT, DE, HI, MA, MN, NY, VT, DC, and WI}  Therefore, depending on the extent of insurance coverage in 2013 it is reasonable expect that some states have more to gain than others from expanding Medicaid in 2014 and 2015. To take this into account, I follow Courtemanche et al., 2017 and interact the uninsurance rate with my DD equation to create the DDD specification in equation \ref{DDD}.  
+
+\begin{equation}
+    Y_{st}=\beta_0+ \beta_1 Expand_{st}*Unisurance_s+\beta_2 X_{st} + \beta_s + \beta_t + \epsilon_{st}
+     \label{DDD}
+\end{equation}
+
+Normally, when interacting a variable, one includes both the variables in the regression as well as the interaction term.  However, in this case, both variables are collinear with variables already in the equation.  $Unisurance_s$ is the uninsurance rate in 2013, and thus perfectly collinear with state fixed effects.  All the information in $Expand_{st}$ is completely contained in $Expand_{st}*Uninsurance$ because this variable has a non-zero value if and only if the expansion was in effect in that particular state-year.  
+
+By interacting $Uninsurance_s$ with $Expand_{st}$, I am essentially creating a variable for the potential effectiveness of the Medicaid expansion.  $Uninsurance_s$ is a continuous variable but it can be helpful to think of the extreme cases when trying to understand equation \ref{DDD}.  If $Uninsurance_s$ equals 0, this means that everyone in the state has insurance, and we would not expect the Medicaid expansion to have any effect on increasing insurance in that state (this state is effectively the same as a non-expansion state).  If $Uninsurance_s$ equals 1, this means that no one in the state has insurance, and we would expect the Medicaid expansion to have a large effect.  
+
+The distinction between including an interaction with the uninsurance rate in 2013 and controlling for the uninsurance rate, is that the uninsurance rate is an intermediate outcome.  If I control for the uninsurance rate in every year, the variation in the outcomes due to the Medicaid expansion and the variation in the outcomes due to the uninsurance rate are difficult to disentangle.  I cannot control for the uninsurance rate in 2013 because this is collinear with state fixed effects.  Therefore, I interact the uninsurance rate in 2013 with the outcome variable.     
+
+The DDD specification makes the parallel trends assumption slightly more believable.  If we consider the extreme case above states that expanded Medicaid and have a complete uninsurance are compared to states that did not expand Medicaid \textit{and} to states that did expand Medicaid and have no uninsurance.  Because states that expanded Medicaid and had low uninsurance tend to have the most socialist insurance policies and states that did not expand Medicaid tend to have the least socialist insurance policies, by grouping these to in one category we hope that on average this makes a better counterfactual to states in the middle.  Formally, the assumption for the DDD model is that in the absence of the Medicaid expansion if there is any differential change in the outcomes between the treatment and control group, it must be entirely accounted for by reweighting the treatment group by the pre-treatment uninsurance rate.  
+
+To test this assumption, I will use a modification of equation \ref{ES_equation}.  Equation \ref{ES_equation2} is exactly the same as equation \ref{ES_equation} except that the relative time dummy variables are weighted by the uninsurance rate.  For the DDD assumption to be valid, we need an F-test for the joint significance of the $\alpha_i$ variables to fail.
+
+
+\begin{equation}
+    Y_{st}=\sum_{i=-y}^1 \alpha_i Y(i)_{st}*Uninsurance_s+ \beta_{1} X_{st} + \beta_s + \beta_t + \epsilon_{st}
+     \label{ES_equation2}
+\end{equation}
+
+\cleardoublepage
+
+I estimate both a DD and a DDD model because the DD approach is has been used more frequently in the literature on the Medicaid expansion.  While, I think that the DDD specification is more believable, I do not expect the results to differ substantially.  For both specifications, I estimate an equation with the entire dataset, an equation without the three 2015 expansion states, and an equation without the eleven early expansion states for robustness. 
+
+
+\section{Results}
+
+First I present the results for the DD event study in table \ref{DD Event Study}.  The $\alpha_i$ coefficients for all the outcome variables fail the F-test of joint significance in all cases except for the coefficients in the overdose deaths regression, which pass at the 10\% level.  This suggests that there may be reason to question the validity of the parallel trends assumption for this outcome.   
+
+\begin{table}[htb]
+\centering
+\scriptsize
+\caption{DD Event Study} 
+\label{DD Event Study}
+\begin{tabular}{ccc}
+\hline \hline
+ \textbf{Outcome} & \textbf{F-stat} & \textbf{P-value} \\
+Total Opioid Sales &0.44 & 0.850 \\
+Buprenorphine & 1.48 & 0.184 \\
+Methadone &0.85 & 0.531\\
+Fenanyl  &0.86 & 0.521 \\
+Overdose Deaths  &1.72 & 0.066*\\
+Admissions  &0.50 & 0.903 \\
+Dependence  &1.20 & 0.282 \\
+Abuse  &0.37 & 0.965\\
+\hline
+\multicolumn{3}{c}{\tiny{Standard errors are in parenthesis.  *, **, and *** indicate }} \\
+\multicolumn{3}{c}{\tiny{significance at the 10\%, 5\% and 1\% levels respectively}} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+Figure \ref{ESpic} depicts graphically the coefficients on each of the relative time dummy variables for each outcome.  If the treatment group and the control group have parallel trends these coefficients should be close to zero.  The event study for Overdose Deaths clearly looks the lmost likely to have significant coefficients which confirms the results from the F-test above. 
+
+  \begin{figure}
+    \centering    
+     \includegraphics[width=\textwidth]{ES1.png};
+    \caption{DD Event Study Coefficients by Relative Time}
+    \label{ESpic}
+\end{figure}
+  
+  
+  \cleardoublepage
+  
+
+
+ 
+Table \ref{DD1} shows the results from the main DD specification and robustness checks.  There are no significant effects for any of the outcome variables in any of the specifications. The magnitude of the effects is relatively small (between 6\% and 16\% of the mean).
+ 
+ 
+\begin{table}[!h]
+\centering
+\caption{DD Regression Results (Coefficient on $Expand_{st}$)}
+\label{DD1}
+\begin{tabular}{cccc}
+\hline
+\textbf{} &
+\textbf{Main} & \textbf{Without 2015} & {\textbf{Without Early}}  \\ 
+& \textbf{Specification} & \textbf{Expanders} & {\textbf{Expanders}}  \\ \hline
+Total Opioid Sales & -3369 & -3690 & -2026 \\
+                           & (2259) & (2457) & (2601)\\  
+& & & \\   
+Buprenorphine & 54.21 & 68.02 & 97.63 \\
+                      & (65.68) & (71.43) & (81.12) \\ 
+& & & \\
+Methadone & 362.2 & 442.7  & 285.4\\
+                 & (295.9) & (322.5) & (312.5) \\ 
+& & & \\
+Fentanyl & 18.96 & 20.81  &  15.50\\
+              & (22.38) & (24.46) & (21.77) \\ 
+
+& & & \\
+Overdose Deaths & 0.104 & 0.120 & 0.135  \\ 
+                          & (0.072) & (0.077) & (0.089) \\ 
+& & & \\
+Admissions & 5.786 & 6.370 & 3.632  \\
+                 & (7.461) & (7.958) & (7.262)\\ 
+& & & \\
+Dependence & 8.379 & 18.75 & 10.02\\
+                   & (22.63) & (21.43) & (22.51)\\ 
+& & & \\
+Abuse &-0.2285 & 0.220 & -0.016\\
+           & (.6219) & (0.619) & (0.604)\\ 
+\hline
+ \multicolumn{4}{c}{\tiny{Standard errors are in parenthesis.  *, **, and *** indicate significance at the 10\%, 5\% and 1\% levels respectively}} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+As discussed in the Methods section above, the event study for the DDD specification is slightly different from the DD case.  Table \ref{DDD Event Study} presents the results from equation \ref{ES_equation2}.  None of the F-tests yield significant results, which suggests that the weighting involved in the DDD specification may create a better set of controls then was present in the DD specification.  Figure \ref{ESpic2} presents these results graphically.
+
+\begin{table}[htb]
+\centering
+\scriptsize
+\caption{DDD Event Study} 
+\label{DDD Event Study}
+\begin{tabular}{ccc}
+\hline \hline
+ \textbf{Outcome} & \textbf{F-stat} & \textbf{P-value} \\
+Total Opioid Sales &0.27 & 0.9520 \\
+Buprenorphine & 0.61 & 0.724 \\
+Methadone &0.75 & 0.606\\
+Fenanyl  &0.59 & 0.7405 \\
+Overdose Deaths  &1.08 & 0.3733\\
+Admissions  &0.28 & 0.9894 \\
+Dependence  &0.28 & 0.9891 \\
+Abuse  &0.57 & 0.8539\\
+\hline
+\multicolumn{3}{c}{\tiny{Standard errors are in parenthesis.  *, **, and *** indicate }} \\
+\multicolumn{3}{c}{\tiny{significance at the 10\%, 5\% and 1\% levels respectively}} \\
+\hline
+\end{tabular}
+\end{table}
+
+ \begin{figure}
+    \centering    
+     \includegraphics[width=\textwidth]{ES2.png};
+    \caption{DDD Event Study Coefficients by Relative Time}
+    \label{ESpic2}
+\end{figure}
+  
+
+
+Table \ref{DDD1} presents the regression results from the DDD specification.  Although these results are arguably more credible than the DD results, both models have insignificant coefficients for every outcome.  This corroborates what we saw initially in figures \ref{Total Opioids Sold} to \ref{Abuse}, which did not suggest a large effect of the Medicaid expansion on indicators of opioid addiction.
+
+This finding is contradictory to the results in RAND Medicare study, where higher levels of insurance were strongly associated with more opioid addiction.  This could be because the elderly react differently to a reduction in the price of opioids than the population which receives Medicaid.  The authors mention that elderly are easily manipulated by their family members who may get the opioids for their own benefit \citep{Powell2016}.   Alternatively, it could be that Medicare Part D was more effective at lowering the price of opioids than the Medicaid expansion.  This would be an interesting area for future research.  
+
+
+\begin{table}[!h]
+\centering
+\caption{DDD Regression Results (Coefficient on $Expand_{st}*Uninsurance_s$)}
+\label{DDD1}
+\begin{tabular}{cccc}
+\hline
+\textbf{} &
+\textbf{Main} & \textbf{Without 2015} & {\textbf{Without Early}}  \\ 
+& \textbf{Specification} & \textbf{Expanders} & {\textbf{Expanders}}  \\ \hline
+Total Opioid Sales & -22050 & -23735 & -21203 \\
+                           & (20387) & (21283) & (24984)\\  
+& & & \\   
+Buprenorphine & 120.2 & 93.41 & 457.9 \\
+                      & (606.8) & (625.3) & (746.1) \\ 
+& & & \\
+Methadone & 1614 & 1633  & 1790\\
+                 & (2180) & (2262) & (2466) \\ 
+& & & \\
+Fentanyl & 110.2 & 113.9  &  112.2\\
+              & (142.1) & (148.1) & (164.9) \\ 
+
+& & & \\
+Overdose Deaths & 0.207 & 0.084 & 0.703  \\ 
+                          & (0.709) & (0.695) & (0.886) \\ 
+& & & \\
+Admissions & 30.02 & 35.57 & 19.70  \\
+                 & (44.42) & (46.92) & (53.99)\\ 
+& & & \\
+Dependence & 0.734 & 52.32 & 6.158\\
+                   & (103.8) & (92.91) & (104.9)\\ 
+& & & \\
+Abuse &-1.576 & 0.508 & -1.278\\
+           & (3.669) & (3.609) & (3.985)\\ 
+\hline
+ \multicolumn{4}{c}{\tiny{Standard errors are in parenthesis.  *, **, and *** indicate significance at the 10\%, 5\% and 1\% levels respectively}} \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\cleardoublepage
+
+
+
+
+\section{Conclusion}
+
+I did not find any significant effects of the Medicaid expansion on indicators of opioid addiction.  As discussed in the introduction, the Medicaid expansion could impact opioid addiction either by lowering the price of opioid drugs or by lowering the price of drug treatment options.  There are at least four explanations for the lack of an effect.  1) Expanding Medicaid did not lower the effective price of drugs or treatment options for the population of concern.  2)  Expanding Medicaid did lower the price of drugs and treatment options, but this did not have a large effect on behavior (either because of the elasticity of demand or because of institutional barriers such as the necessity to have a prescription.  3)  Lowering the price of drugs and treatment options did affect behavior, but the magnitude of the positive and negative effects was similar so they cancel out.  4)  There may be a lag in the effectiveness of the Medicaid expansion, so two years of post treatment data was not enough to observe a change in opioid addiction indicators.  Further research should investigate if the effective price of drugs or treatment options changed as a result of the Medicaid expansion, and it should attempt to find the elasticity of demand for these two goods.  As it stands, this paper suggests that there should not be a concern about the Medicaid expansion leading to an increase in opioid addiction. 
+
+\cleardoublepage
+
+\bibliographystyle{chicago}
+\bibliography{opioidreferences}
+
+
+\end{document}
+
